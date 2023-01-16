@@ -43,13 +43,7 @@ function App() {
     })
     setItem(filtro);
   }
-  const editElement = async (id) => {
-      await api.patch(`/terror/${id}`, {
-        nome: 'Filme Terror'
-      })
-      .then((sucesso) => console.log(sucesso))
-      window.location.reload();
-  }
+
   if(load){
     return (
       <div className='container'>
@@ -71,17 +65,14 @@ function App() {
               <div key={item.id} className='property-card'>
                   <img src={item.poster} alt="" />
                   <div className='property-description'>
-                    <Link to={`/terror/${item.id}`}>
-                      <h5>{item.nome}</h5>
-                    </Link>
+                    <h5>{item.nome}</h5>
                     <div className='description'>{item.descricao}</div>
                     <div className='box-config'>
-                      <Link to={`/terror/${item.id}`}>
-                        <button className='btn-edit'>Saiba mais</button>
+                      <Link className='btn-edit' to={`/terror/${item.id}`}>
+                        Saiba mais
                       </Link>
                       
                       <button className='btn-delete' onClick={() => deleteElement(item.id)}>Excluir</button>
-                      {/* <button className='btn-edit' onClick={() => editElement(item.id)}>Editar</button> */}
                     </div>
                   </div>
                 

@@ -20,33 +20,35 @@ const Adiciona = () => {
     await api.post('/terror', item)
     // console.log("Upload Imagem")
     // console.log(imagem)
-    navigate("/", {replace: true})
+    navigate("/terror", {replace: true})
   }
 
   return (
     <div className='new-post'>
-      <h2>Inserir novo Lanche</h2>
+      <h1>Inserir novo Filme</h1>
       
-      <form onSubmit={(e) => addItem(e)}>
-        <div className='form-control'>
-          <label htmlFor="">Nome</label>
-          <input type="text" placeholder='Digite o nome do filme' onChange={(e) => setNome(e.target.value)}/>
+      <form className="form-content" onSubmit={(e) => addItem(e)}>
+        <div className="input-box">
+          <label className="title-label">Nome</label>
+          <input type="text" className="input-text" placeholder="Digite o nome do filme" required onChange={(e) => setNome(e.target.value)}/>
         </div>
-        <div className='form-control'>
-          <label htmlFor="">Descrição</label>
-          <textarea name="" id="" placeholder='Digite a descrição do filme' onChange={(e) => setDescricao(e.target.value)}></textarea>
+        
+        <div className="input-box">
+          <label className="title-label">Ano de Lançamento</label>
+          <input type="date"className="input-text" placeholder="Digite o ano de lançamento" onChange={(e) => setAno(e.target.value)}/>
         </div>
-        <div className='form-control'>
-          <label htmlFor="">Ano de lançamento</label>
-          <input type="text" placeholder='Digite o ano de lançamento do filme' onChange={(e) => setAno(Number(e.target.value))}/>
-        </div>
-        <div className='form-control'>
-          <label htmlFor="">Poster(url)</label>
-          <input type="text" placeholder='Coloque aqui o poster do filme' onChange={(e) => setPoster(e.target.value)}/>
-        </div>
-        <input type="submit" className='btn' value="Adicionar" />
-      </form> 
 
+        <div className="input-box">
+          <label className="title-label">Poster</label>
+          <input type="text" className="input-text" placeholder="Digite a url do poster" onChange={(e) => setPoster(e.target.value)}/>
+        </div>
+        
+        <div className="input-box">
+        <label className="title-label">Sinopse</label>
+          <textarea  className="input-text comment" placeholder="Digite a descrição do filme..." onChange={(e) => setDescricao(e.target.value)}></textarea>
+        </div>
+        <input type="submit" className="submit-button" value="Adicionar" />
+      </form>
     </div>
   )
 }

@@ -78,6 +78,41 @@ function Filme() {
                 overlayClassName="modal-overlay"
                 className="modal-content"
               >
+              <form>
+              <div className="input-box">
+                <label className="title-label">Nome</label>
+                <input type="text" className="input-text" placeholder="Digite o nome do filme" required onChange={(e) => setNome(e.target.value)}/>
+              </div>
+              
+              <div className="input-box">
+                <label className="title-label">Ano de Lançamento</label>
+                <input type="date"className="input-text" placeholder="Digite o ano de lançamento" onChange={(e) => setAno(e.target.value)}/>
+              </div>
+
+              <div className="input-box">
+                <label className="title-label">Poster</label>
+                <input type="text" className="input-text" placeholder="Digite a url do poster" onChange={(e) => setPoster(e.target.value)}/>
+              </div>
+              
+              <h2>Sinopse</h2>
+              <div className="input-box">
+                <textarea  className="input-text comment" placeholder="Digite a descrição do filme..." onChange={(e) => setDescricao(e.target.value)}></textarea>
+              </div>
+              {/* <input type="submit" id="submit" value="Submit" className="submit-button"/> */}
+            </form>
+              <div className="box-btn">
+                <button className='btn-modal' onClick={closeModal}>Close</button>
+                <button className='btn-modal' onClick={() => editElement(item.id)}>Salvar alterações</button>
+              </div>
+              </Modal> 
+            
+            {/* <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Example Modal"
+                overlayClassName="modal-overlay"
+                className="modal-content"
+              >
                 <form className='box-modal'>
                   <label htmlFor="">Alterar nome:</label>
                     <input type="text" placeholder='Digite o nome do item' onChange={(e) => setNome(e.target.value)}/>
@@ -96,7 +131,7 @@ function Filme() {
                 onClick={() => editElement(item.id)}
                 >Salvar alterações</button>
                 <button className='btn-modal' onClick={closeModal}>Close</button>
-              </Modal> 
+              </Modal>  */}
         </div>
      );
 }

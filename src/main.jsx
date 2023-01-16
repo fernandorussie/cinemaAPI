@@ -30,7 +30,8 @@ const router = createBrowserRouter([
         element: <Adiciona/>
       },
       {
-        path: "/:genero/:id",
+        
+        path: "/terror/:id",
         element: <Filme/>
       },
 

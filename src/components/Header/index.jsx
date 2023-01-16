@@ -16,6 +16,9 @@ function Header() {
                     <li>
                         <Link to={'/terror'}>Terror</Link>
                     </li>
+                    <li>
+                        <Link to={'/adiciona'}>Adicionar Filme</Link>
+                    </li>
                 </ul>
             </header>
         </div>

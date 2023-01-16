@@ -5,6 +5,7 @@ import App from './App'
 import Home from './routes/Home'
 import Terror from './routes/Terror'
 import Filme from './routes/Filme'
+import Adiciona from './routes/Adiciona'
 
 import './index.css'
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/terror",
         element: <Terror/>
+      },
+      {
+        path: "/adiciona",
+        element: <Adiciona/>
       },
       {
         path: "/terror/:id",

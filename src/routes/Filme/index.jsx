@@ -56,11 +56,11 @@ function Filme() {
     }
       
     return ( 
-        <div>
-            <h1>Novo Filme</h1>
-            
-            <div>
-                <div>
+        <div className="container-filme">
+          <h1>Novo Filme</h1>
+          <div className="box-content">
+            <div className="box-info">
+                <div className="box-title">
                     <p>{item.nome}</p>
                     <svg onClick={openModal} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" >
                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
@@ -69,69 +69,45 @@ function Filme() {
                 </div>
                 <p>{item.descricao}</p>
                 <p>{item.ano}</p>
-                <img width="100px" src={item.poster} alt="" />
             </div>
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Example Modal"
-                overlayClassName="modal-overlay"
-                className="modal-content"
-              >
-              <form>
-              <div className="input-box">
-                <label className="title-label">Nome</label>
-                <input type="text" className="input-text" placeholder="Digite o nome do filme" required onChange={(e) => setNome(e.target.value)}/>
-              </div>
-              
-              <div className="input-box">
-                <label className="title-label">Ano de Lançamento</label>
-                <input type="date"className="input-text" placeholder="Digite o ano de lançamento" onChange={(e) => setAno(e.target.value)}/>
-              </div>
-
-              <div className="input-box">
-                <label className="title-label">Poster</label>
-                <input type="text" className="input-text" placeholder="Digite a url do poster" onChange={(e) => setPoster(e.target.value)}/>
-              </div>
-              
-              <h2>Sinopse</h2>
-              <div className="input-box">
-                <textarea  className="input-text comment" placeholder="Digite a descrição do filme..." onChange={(e) => setDescricao(e.target.value)}></textarea>
-              </div>
-              {/* <input type="submit" id="submit" value="Submit" className="submit-button"/> */}
-            </form>
-              <div className="box-btn">
-                <button className='btn-modal' onClick={closeModal}>Close</button>
-                <button className='btn-modal' onClick={() => editElement(item.id)}>Salvar alterações</button>
-              </div>
-              </Modal> 
+            <div>
+              <img width="100px" src={item.poster} alt="" />
+            </div>
+          </div>
+          <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              contentLabel="Example Modal"
+              overlayClassName="modal-overlay"
+              className="modal-content"
+            >
+            <form>
+            <div className="input-box">
+              <label className="title-label">Nome</label>
+              <input type="text" className="input-text" placeholder="Digite o nome do filme" required onChange={(e) => setNome(e.target.value)}/>
+            </div>
             
-            {/* <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Example Modal"
-                overlayClassName="modal-overlay"
-                className="modal-content"
-              >
-                <form className='box-modal'>
-                  <label htmlFor="">Alterar nome:</label>
-                    <input type="text" placeholder='Digite o nome do item' onChange={(e) => setNome(e.target.value)}/>
+            <div className="input-box">
+              <label className="title-label">Ano de Lançamento</label>
+              <input type="date"className="input-text" placeholder="Digite o ano de lançamento" onChange={(e) => setAno(e.target.value)}/>
+            </div>
 
-                  <label htmlFor="">Alterar descrição:</label>
-                    <textarea type="text" placeholder='Digite a descrição do item' onChange={(e) => setDescricao(e.target.value)}/>
-
-                  <label htmlFor="">Alterar preço:</label>
-                    <input type="text" placeholder='Digite o preço do item' onChange={(e) => setAno(e.target.value)}/>
-
-                  <label htmlFor="">Alterar poster:</label>
-                    <input type="text" name='image' placeholder='Digite a url do poster' onChange={(e) => setPoster(e.target.value)}/>
-                </form>
-                
-                <button className='btn-modal'
-                onClick={() => editElement(item.id)}
-                >Salvar alterações</button>
-                <button className='btn-modal' onClick={closeModal}>Close</button>
-              </Modal>  */}
+            <div className="input-box">
+              <label className="title-label">Poster</label>
+              <input type="text" className="input-text" placeholder="Digite a url do poster" onChange={(e) => setPoster(e.target.value)}/>
+            </div>
+            
+            <h2>Sinopse</h2>
+            <div className="input-box">
+              <textarea  className="input-text comment" placeholder="Digite a descrição do filme..." onChange={(e) => setDescricao(e.target.value)}></textarea>
+            </div>
+            {/* <input type="submit" id="submit" value="Submit" className="submit-button"/> */}
+          </form>
+            <div className="box-btn">
+              <button className='btn-modal' onClick={closeModal}>Close</button>
+              <button className='btn-modal' onClick={() => editElement(item.id)}>Salvar alterações</button>
+            </div>
+          </Modal> 
         </div>
      );
 }

@@ -7,6 +7,8 @@ import Terror from './routes/Terror'
 import Filme from './routes/Filme'
 import Adiciona from './routes/Adiciona'
 
+import { ToastContainer } from 'react-toastify'
+
 import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
         element: <Adiciona/>
       },
       {
-        path: "/terror/:id",
+        path: "/:genero/:id",
         element: <Filme/>
       },
 
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ToastContainer autoClose={3000}/>
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )

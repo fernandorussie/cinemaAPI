@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import {ToastContainer, toast} from'react-toastify'
+import { toast } from'react-toastify'
 import api from '../../service/api'
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -32,7 +32,7 @@ function App() {
     .then((sucesso) => {
       // navigate("/", {replace: true})
       console.log(sucesso)
-      toast.success('Item excluido com sucesso');
+      toast.success('Item excluido com sucesso!');
     })
     .catch((error) => {
       console.log(error)
@@ -53,12 +53,11 @@ function App() {
   }
   return (
     <div className='container'>
-      <ToastContainer></ToastContainer>
       <h1>Filmes de Terror:</h1>
       <div className='box-cards'>
         {item.length === 0 ?
           <div>
-            <h2>Esta categoria não possiu nenhum filme no momento, clique <Link>Aqui</Link> para adicionar um novo filme!</h2>
+            <h2>Esta categoria não possiu nenhum filme no momento, clique <Link to={`/adiciona`}>Aqui</Link> para adicionar um novo filme!</h2>
           </div>
           : (
             item.map((item) => (
@@ -68,7 +67,7 @@ function App() {
                     <h5>{item.nome}</h5>
                     <div className='description'>{item.descricao}</div>
                     <div className='box-config'>
-                      <Link className='btn-edit' to={`/terror/${item.id}`}>
+                      <Link className='btn-link' to={`/terror/${item.id}`}>
                         Saiba mais
                       </Link>
                       

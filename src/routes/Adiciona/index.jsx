@@ -16,11 +16,6 @@ const Adiciona = () => {
 
   const [genero, setGenero] = useState('');
 
-  const handleGenero = (e) => {
-    setGenero(e)
-    console.log(genero)
-  }
-  
   const addItem = async (e) => {
     e.preventDefault();
 
@@ -38,14 +33,14 @@ const Adiciona = () => {
       <form className="form-content" onSubmit={(e) => addItem(e)}>
         <div className="input-box">
           <label className="title-label">Escolha o genero do filme</label>
-          <label htmlFor="">
-            Terror:
-            <input type="radio" name="genero" required onChange={(e) => handleGenero(e.target.value)} value='terror'/>
-          </label>
-          <label htmlFor="">
-            Comédia:
-            <input type="radio" name="genero" required onChange={(e) => handleGenero(e.target.value)} value='comedia'/>
-          </label>
+          <select name="genero" onChange={(e) => setGenero(e.target.value)} required>
+            <option value=''>Selecione</option>
+            <option value="terror">Terror</option>
+            <option value="comedia">Comedia</option>
+            <option value="acao">Ação</option>
+            <option value="drama">Drama</option>
+            <option value="romance">Romance</option>
+          </select>
         </div>
         <div className="input-box">
           <label className="title-label">Nome</label>

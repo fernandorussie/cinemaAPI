@@ -6,43 +6,104 @@
   font-family: "Open Sans", sans-serif;
 
 }
-
+body{
+  width: 100vw;
+	height: 100vh;
+  background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e);
+	background-size: 180% 180%;
+	animation: gradient-animation 6s ease infinite;
+}
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 .container-filme{
   width: 100%;
+  height: 90vh;
   max-width: 1300px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  padding: 2rem;
   color: #fff;
-  background-color: red;
+  opacity: 1;
 }
 .box-content{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: yellow;
-}
-.box-info{
-  width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: pink;
-}
-.box-title{
-  width: 300px;
+  width: 80%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-
-  background-color: blue;
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 2rem;
 }
+.box-info{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.box-title{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  
+}
+.box-title p{
+  font-size: 2rem;
+  color: #fff;
+  opacity: 1;
+  margin-right: 5rem;
+}
+.box-title svg{
+  cursor: pointer;
+}
+.box-description{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  
+}
+.box-description p{
+  font-size: 25px;
+  color: #fff;
+  opacity: 1;
+}
+.box-description div{
+  margin: 2rem 0;
+}
+.box-description div p{
+  font-size: 20px;
+}
+
+.img-poster{
+  max-width: 100%;
+  width: 320px;
+}
+
+
+
+
+
+
+
+
+
 .modal-overlay {
   background: #8f8f8f44;
   position: fixed;

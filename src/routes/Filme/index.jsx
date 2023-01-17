@@ -57,7 +57,6 @@ function Filme() {
       
     return ( 
         <div className="container-filme">
-          <h1>Novo Filme</h1>
           <div className="box-content">
             <div className="box-info">
                 <div className="box-title">
@@ -67,11 +66,17 @@ function Filme() {
                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                     </svg>
                 </div>
-                <p>{item.descricao}</p>
-                <p>{item.ano}</p>
+                <div className="box-description">
+                  <p>{item.descricao}</p>
+                  <div>
+                    <p>Duração do filme: {item.duracao}</p>
+                    <p>Ano de lançamento: {item.ano}</p>
+                  </div>
+
+                </div>
             </div>
             <div>
-              <img width="100px" src={item.poster} alt="" />
+              <img className="img-poster" src={item.poster} alt="" />
             </div>
           </div>
           <Modal

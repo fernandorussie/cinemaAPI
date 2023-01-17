@@ -12,11 +12,12 @@ const Adiciona = () => {
   const [descricao, setDescricao] = useState();
   const [ano, setAno] = useState();
   const [poster, setPoster] = useState();
+  const [duracao, setDuracao] = useState();
 
   const addItem = async (e) => {
     e.preventDefault();
 
-    const item = {nome, descricao, poster, ano, categoria_id: 1, userId: 1}
+    const item = {nome, descricao, poster, duracao, ano, categoria_id: 1, userId: 1}
     await api.post('/terror', item)
     // console.log("Upload Imagem")
     // console.log(imagem)
@@ -36,6 +37,11 @@ const Adiciona = () => {
         <div className="input-box">
           <label className="title-label">Ano de Lançamento</label>
           <input type="date"className="input-text" placeholder="Digite o ano de lançamento" onChange={(e) => setAno(e.target.value)}/>
+        </div>
+
+        <div className="input-box">
+          <label className="title-label">Duracao</label>
+          <input type="text" className="input-text" placeholder="Digite a duracao do filme" onChange={(e) => setDuracao(e.target.value)}/>
         </div>
 
         <div className="input-box">

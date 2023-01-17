@@ -5,12 +5,12 @@ import api from '../../service/api'
 import 'react-toastify/dist/ReactToastify.css';
 import './Filme.css'
 
-const Filme = ({id, poster, nome, descricao}) => {
+const Filme = ({id, poster, nome, descricao, genero}) => {
     const [modalOpen, setModalOpen] = React.useState(false);
 
     
     const deleteElement = async (id) => {
-        await api.delete(`/terror/${id}`)
+        await api.delete(`/${genero}/${id}`)
         .then((sucesso) => {
           if (sucesso.status === 200) window.location.reload()
         })
@@ -26,7 +26,7 @@ const Filme = ({id, poster, nome, descricao}) => {
                   <h5>{nome}</h5>
                   <div className='description'>{descricao}</div>
                   <div className='box-config'>
-                    <Link className='btn-link' to={`/terror/${id}`}>
+                    <Link className='btn-link' to={`/${genero}/${id}`}>
                       Saiba mais
                     </Link>
                     

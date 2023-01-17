@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 
 import Home from './routes/Home'
-import Terror from './routes/Terror'
+import Terror from './routes/Filmes'
 import Filme from './routes/Filme'
 import Adiciona from './routes/Adiciona'
 
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path: "/terror",
+        path: "/:genero",
         element: <Terror/>
       },
       {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         
-        path: "/terror/:id",
+        path: "/:genero/:id",
         element: <Filme/>
       },
 

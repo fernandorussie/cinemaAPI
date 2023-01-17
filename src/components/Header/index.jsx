@@ -17,16 +17,16 @@ function Header() {
                         <Link to={`/terror`}>Terror</Link>
                     </li>
                     <li>
-                        <Link to={'/comedia'}>comedia</Link>
+                        <Link to={'/comedia'}>Comédia</Link>
                     </li>
                     <li>
-                        <Link to={'/romance'}>romance</Link>
+                        <Link to={'/romance'}>Romance</Link>
                     </li>
                     <li>
-                        <Link to={'/acao'}>acao</Link>
+                        <Link to={'/acao'}>Ação</Link>
                     </li>
                     <li>
-                        <Link to={'/drama'}>drama</Link>
+                        <Link to={'/drama'}>Drama</Link>
                     </li>
                     <li>
                         <Link to={'/adiciona'}>Adicionar Filme</Link>

@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-
+import Modal from "react-modal"
 import { toast } from'react-toastify'
 import api from '../../service/api'
 
 import 'react-toastify/dist/ReactToastify.css';
 import './styles.css'
 
+Modal.setAppElement('#root');
 function App() {
+
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState([]);
   const [load, setLoad] = useState(true);
 
@@ -42,6 +45,15 @@ function App() {
       return (item.id !== id)
     })
     setItem(filtro);
+    setIsOpen(false)
+  }
+
+  function openModal() {
+      setIsOpen(true);
+  }
+
+  function closeModal() {
+      setIsOpen(false);
   }
 
   if(load){
@@ -62,19 +74,30 @@ function App() {
           : (
             item.map((item) => (
               <div key={item.id} className='property-card'>
-                  <img src={item.poster} alt="" />
-                  <div className='property-description'>
-                    <h5>{item.nome}</h5>
-                    <div className='description'>{item.descricao}</div>
-                    <div className='box-config'>
-                      <Link className='btn-link' to={`/terror/${item.id}`}>
-                        Saiba mais
-                      </Link>
-                      
-                      <button className='btn-delete' onClick={() => deleteElement(item.id)}>Excluir</button>
-                    </div>
+                <img src={item.poster} alt="" />
+                <div className='property-description'>
+                  <h5>{item.nome}</h5>
+                  <div className='description'>{item.descricao}</div>
+                  <div className='box-config'>
+                    <Link className='btn-link' to={`/terror/${item.id}`}>
+                      Saiba mais
+                    </Link>
+                    
+                    <button className='btn-delete' onClick={openModal}>Excluir</button>
                   </div>
-                
+                </div>
+                <Modal
+                  isOpen={modalIsOpen}
+                  onRequestClose={closeModal}
+                  contentLabel="Example Modal"
+                  overlayClassName="modal-overlay"
+                  className="modal-content"
+                  key={item.id}
+                >
+                  <h1>Você realmente quer excluir {item.nome} da sua lista de filmes?{item.id}</h1>
+                  <button className='btn-delete' onClick={() => deleteElement(item.id)}>Sim</button>
+                  <button className='btn-delete' onClick={closeModal}>Não</button>
+                </Modal>
               </div>
             ))
           )

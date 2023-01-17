@@ -46,6 +46,7 @@ function App() {
     })
     setItem(filtro);
     setIsOpen(false)
+    window.location.reload();
   }
 
   function openModal() {
@@ -54,6 +55,7 @@ function App() {
 
   function closeModal() {
       setIsOpen(false);
+      window.location.reload();
   }
 
   if(load){

@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import api from '../../service/api'
+import { useParams } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './styles.css'
 import Filme from '../../components/Filme/Filme';
 
 function App() {
+  const {genero} = useParams()
   const [item, setItem] = useState([]);
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
     function getApi(){
-      api.get('/terror')
+      api.get(`/${genero}`)
       .then((response) => {
         console.log(response.data)
         const data = response.data
@@ -24,7 +26,7 @@ function App() {
       })
     }
     getApi()
-  }, []);
+  }, [genero]);
  
   if(load){
     return (
@@ -35,7 +37,7 @@ function App() {
   }
   return (
     <div className='container'>
-      <h1>Filmes de Terror:</h1>
+      <h1>Filmes:</h1>
       <div className='box-cards'>
         {item.length === 0 ?
           <div>
@@ -43,7 +45,7 @@ function App() {
           </div>
           : (
             item.map((item) => (
-              <Filme id={item.id} poster={item.poster} nome={item.nome} descricao={item.descricao} key={item.id} />
+              <Filme id={item.id} poster={item.poster} nome={item.nome} descricao={item.descricao} key={item.id} genero={genero} />
             ))
           )
         }

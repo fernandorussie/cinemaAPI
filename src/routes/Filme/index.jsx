@@ -9,7 +9,7 @@ import './filme.css'
 Modal.setAppElement('#root');
 function Filme() {
     const navigate = useNavigate();
-    const { id } = useParams();
+    const { genero, id } = useParams();
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [item, setItem] = useState({});
@@ -20,7 +20,7 @@ function Filme() {
 
     useEffect(() => {
         async function getApi() {
-            await api.get(`/terror/${id}`)
+            await api.get(`/${genero}/${id}`)
             .then((response) => {
                 setItem(response.data);
                 console.log(response.data);
@@ -37,7 +37,7 @@ function Filme() {
     }, [ id])
 
     const editElement = async (id) => {
-        await api.patch(`/terror/${id}`, {
+        await api.patch(`/${genero}/${id}`, {
           nome: nome,
           poster: poster,
           ano: ano,

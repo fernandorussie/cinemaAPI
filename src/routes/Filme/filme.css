@@ -67,7 +67,7 @@ body{
   font-size: 2rem;
   color: #fff;
   opacity: 1;
-  margin-right: 5rem;
+  margin-right: 1rem;
 }
 .box-title svg{
   cursor: pointer;
@@ -188,6 +188,9 @@ textarea::placeholder {
 .btn-modal {
   width: 40%;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.068);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(10px);
@@ -195,6 +198,7 @@ textarea::placeholder {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.192);
   transition-duration: 0.5s; 
   cursor: pointer;
+  opacity: 1;
   color: #fff;
 }
 

@@ -31,24 +31,24 @@ function App() {
   }, []);
  
   const deleteElement = async (id) => {
-    if(window.confirm('Você realmente quer excluir o filme?')){
-      await api.delete(`/terror/${id}`)
-      .then((sucesso) => {
-        // navigate("/", {replace: true})
-        console.log(sucesso)
-        toast.success('Item excluido com sucesso!');
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  
-      let filtro = item.filter((item) => {
-        return (item.id !== id)
-      })
-      setItem(filtro);
-      setIsOpen(false)
-      window.location.reload();
-    }
+    // if(window.confirm('Você realmente quer excluir o filme?')){
+    // }
+    await api.delete(`/terror/${id}`)
+    .then((sucesso) => {
+      // navigate("/", {replace: true})
+      console.log(sucesso)
+      toast.success('Item excluido com sucesso!');
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+    let filtro = item.filter((item) => {
+      return (item.id !== id)
+    })
+    setItem(filtro);
+    setIsOpen(false)
+    // window.location.reload();
   }
 
   function openModal() {

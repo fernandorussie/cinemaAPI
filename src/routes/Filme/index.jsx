@@ -72,6 +72,10 @@ function Filme() {
                     <p>Duração do filme: {item.duracao}</p>
                     <p>Ano de lançamento: {item.ano}</p>
                   </div>
+                  <a className="btn-modal" target="blank" href={`https://youtube.com/results?search_query=Filme ${item.nome} ${item.ano} trailer`}>
+                    Assistir
+                  </a>
+
 
                 </div>
             </div>

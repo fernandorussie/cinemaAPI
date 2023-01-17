@@ -14,11 +14,18 @@ const Adiciona = () => {
   const [poster, setPoster] = useState();
   const [duracao, setDuracao] = useState();
 
+  const [genero, setGenero] = useState('');
+
+  const handleGenero = (e) => {
+    setGenero(e)
+    console.log(genero)
+  }
+  
   const addItem = async (e) => {
     e.preventDefault();
 
     const item = {nome, descricao, poster, duracao, ano, categoria_id: 1, userId: 1}
-    await api.post('/terror', item)
+    await api.post(`/${genero}`, item)
     // console.log("Upload Imagem")
     // console.log(imagem)
     navigate("/terror", {replace: true})
@@ -29,6 +36,17 @@ const Adiciona = () => {
       <h1>Inserir novo Filme</h1>
       
       <form className="form-content" onSubmit={(e) => addItem(e)}>
+        <div className="input-box">
+          <label className="title-label">Escolha o genero do filme</label>
+          <label htmlFor="">
+            Terror:
+            <input type="radio" name="genero" required onChange={(e) => handleGenero(e.target.value)} value='terror'/>
+          </label>
+          <label htmlFor="">
+            Comédia:
+            <input type="radio" name="genero" required onChange={(e) => handleGenero(e.target.value)} value='comedia'/>
+          </label>
+        </div>
         <div className="input-box">
           <label className="title-label">Nome</label>
           <input type="text" className="input-text" placeholder="Digite o nome do filme" required onChange={(e) => setNome(e.target.value)}/>

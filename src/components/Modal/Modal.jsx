@@ -16,7 +16,10 @@ const Modal = ({ modalOpen, setModalOpen, id, nome, deleteFunc }) => {
     >
       <h2>Deseja deletar o filme "{nome}"? Clique em "OK" para confirmar.</h2>
       <button onClick={(e) => deleteFunc(e)}>OK</button>
-      <button onClick={() => setModalOpen(false)}>Cancelar</button>
+      <button onClick={() => {
+        setModalOpen(false)
+        window.location.reload()
+      }}>Cancelar</button>
     </ReactModal>
   );
 };

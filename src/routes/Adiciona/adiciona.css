@@ -1,12 +1,12 @@
-.new-post h2{
-    text-align: center;
-    margin-bottom: 1rem;
+.new-post h2 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-form{
-    max-width: 500px;
-    width: 100%;
-    margin:0 auto;
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
 }
 .form-content {
   width: 90%;
@@ -49,7 +49,7 @@ label {
   border: none;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.068);
 }
-.input-text:active .input-text:focus{
+.input-text:active .input-text:focus {
   border-color: var(--accent-color);
 }
 input {
@@ -71,8 +71,7 @@ textarea::placeholder {
   resize: none;
 }
 
-
-.box-btn{
+.box-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,7 +84,7 @@ textarea::placeholder {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.048);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.192);
-  transition-duration: 0.5s; 
+  transition-duration: 0.5s;
   cursor: pointer;
   color: #fff;
 }
@@ -95,11 +94,6 @@ textarea::placeholder {
   transition-duration: 0.5s;
 }
 
-
-
-
-
-
 .select-selected {
   background-color: DodgerBlue;
 }
@@ -107,7 +101,7 @@ textarea::placeholder {
 /* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 14px;
   right: 10px;
   width: 0;
@@ -123,7 +117,8 @@ textarea::placeholder {
 }
 
 /* style the items (options), including the selected item: */
-.select-items div,.select-selected {
+.select-items div,
+.select-selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -146,6 +141,14 @@ textarea::placeholder {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.erro {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
 }

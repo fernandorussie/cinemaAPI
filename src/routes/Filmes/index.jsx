@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
 import Filme from '../../components/Filme/Filme';
+import Head from '../../components/Head';
 
 function App() {
   const { genero } = useParams();
@@ -37,6 +38,7 @@ function App() {
   }
   return (
     <div className="container">
+      <Head title="Filmes"/>
       <h1>Filmes:</h1>
       <div className="box-cards">
         {item.length === 0 ? (

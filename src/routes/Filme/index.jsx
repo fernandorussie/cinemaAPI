@@ -77,7 +77,7 @@ function Filme() {
           <div className="box-description">
             <p>{item.descricao}</p>
             <div>
-              <p>Duração do filme: {item.duracao}</p>
+              <p>Duração do filme: {item.duracao} min</p>
               <p>Ano de lançamento: {item.ano}</p>
             </div>
             <a
@@ -90,7 +90,7 @@ function Filme() {
           </div>
         </div>
         <div>
-          <img className="img-poster" src={item.poster} alt="" />
+          <img className="img-poster" src={item.poster} alt={item.nome}/>
         </div>
       </div>
       <Modal
@@ -102,6 +102,7 @@ function Filme() {
       >
         <form>
           <div className="input-box">
+            <h2>Editar filme</h2>
             <label className="title-label">Nome</label>
             <input
               type="text"
@@ -132,19 +133,18 @@ function Filme() {
             />
           </div>
 
-          <h2>Sinopse</h2>
           <div className="input-box">
+          <label className="title-label">Sinopse</label>
             <textarea
               className="input-text comment"
               placeholder="Digite a descrição do filme..."
               onChange={(e) => setDescricao(e.target.value)}
             ></textarea>
           </div>
-          {/* <input type="submit" id="submit" value="Submit" className="submit-button"/> */}
         </form>
         <div className="box-btn">
           <button className="btn-modal" onClick={closeModal}>
-            Close
+            Cancelar
           </button>
           <button className="btn-modal" onClick={() => editElement(item.id)}>
             Salvar alterações

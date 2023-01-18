@@ -44,7 +44,7 @@ const Adiciona = () => {
             setPoster('');
             setDuracao('');
             setGenero('');
-            toast('Filme cadastrado com sucesso!');
+            toast.success('Filme cadastrado com sucesso!');
           }
         })
         .catch((error) => console.log(error));
@@ -58,18 +58,18 @@ const Adiciona = () => {
 
   return (
     <div className="new-post">
-      <h1>Inserir novo Filme</h1>
-
       <form className="form-content" onSubmit={(e) => addItem(e)}>
         {erro && <p className="erro">{erro}</p>}
+        <h2>Inserir novo Filme</h2>
         <div className="input-box">
           <label className="title-label">Escolha o genero do filme</label>
-          <select
+          <select className='select-form'
             name="genero"
             onChange={(e) => setGenero(e.target.value)}
             required
+            value={genero}
           >
-            <option value="">Selecione</option>
+            <option className='select-option' value="">Selecione</option>
             <option value="terror">Terror</option>
             <option value="comedia">Comedia</option>
             <option value="acao">Ação</option>
@@ -84,6 +84,7 @@ const Adiciona = () => {
             className="input-text"
             placeholder="Digite o nome do filme"
             required
+            value={nome}
             onChange={(e) => setNome(e.target.value)}
           />
         </div>
@@ -94,16 +95,18 @@ const Adiciona = () => {
             type="date"
             className="input-text"
             placeholder="Digite o ano de lançamento"
-            onChange={(e) => setAno(e.target.value)}
+            value={ano}
+            onChange={(e) => {setAno(e.target.value)}}
           />
         </div>
 
         <div className="input-box">
-          <label className="title-label">Duracao</label>
+          <label className="title-label">Duração</label>
           <input
             type="text"
             className="input-text"
-            placeholder="Digite a duracao do filme"
+            placeholder="Digite a duracao do filme em minutos"
+            value={duracao}
             onChange={(e) => setDuracao(e.target.value)}
           />
         </div>
@@ -114,6 +117,7 @@ const Adiciona = () => {
             type="text"
             className="input-text"
             placeholder="Digite a url do poster"
+            value={poster}
             onChange={(e) => setPoster(e.target.value)}
           />
         </div>
@@ -123,6 +127,7 @@ const Adiciona = () => {
           <textarea
             className="input-text comment"
             placeholder="Digite a descrição do filme..."
+            value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
           ></textarea>
         </div>

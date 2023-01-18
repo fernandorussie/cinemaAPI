@@ -7,6 +7,9 @@
 :root {
   --accent-color: rgb(102, 57, 139);
 }
+main{
+    min-height: 73.9vh;
+}
 body{
     background-color:  #000;
     color: #fff;

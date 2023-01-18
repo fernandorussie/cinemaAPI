@@ -27,7 +27,7 @@ const Filme = ({id, poster, nome, descricao, genero}) => {
                   <div className='description'>{descricao}</div>
                   <div className='box-config'>
                     <Link className='btn-link' to={`/${genero}/${id}`}>
-                      Saiba mais
+                      Acessar
                     </Link>
                     
                     <button 

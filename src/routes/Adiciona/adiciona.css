@@ -12,14 +12,17 @@ form {
   width: 90%;
   max-width: 500px;
   padding: 18px;
+  margin-top: 2rem;
   border-radius: 5px;
   background-color: #29203f;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
-h1 {
+
+h2 {
   font-size: 30px;
   text-align: center;
-  margin: 10px;
+  margin-bottom: 2rem;
 }
 
 h2,
@@ -37,13 +40,27 @@ label {
   padding-bottom: 20px;
 }
 
+.input-box select{
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  margin-top: 0.5rem;
+  color: #fff;
+  background: no-repeat #ffffff10;
+  background: rgba(193, 117, 255, 0.400);
+  background-position: 205px center;
+  text-overflow: "";
+  border: none;
+}
+.input-box select::-ms-expand {
+  display: none;
+}
 .input-text {
   width: 100%;
   height: 2.375rem;
   padding: 0.375rem 0.75rem;
   margin-top: 0.5rem;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.068);
+  background: rgba(193, 117, 255, 0.400);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: none;
@@ -79,71 +96,21 @@ textarea::placeholder {
 .submit-button {
   width: 100%;
   height: 40px;
-  background: rgba(255, 255, 255, 0.068);
+  background: rgba(193, 117, 255, 0.400);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.048);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.192);
-  transition-duration: 0.5s;
+  transition-duration: 0.9s all ease;
   cursor: pointer;
   color: #fff;
+  font-weight: bold;
 }
 
 .submit-button:hover {
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(193, 117, 255, 0.300);
   transition-duration: 0.5s;
-}
-
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  position: absolute;
-  content: '';
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/* style the items (options), including the selected item: */
-.select-items div,
-.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-
-/* Style items (options): */
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgb(193, 117, 255);
 }
 
 .erro {

@@ -42,13 +42,14 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 2rem;
+  border-radius: 5px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   background: rgba( 255, 255, 255, 0.15 );
+  background: #29203f;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 3px );
   -webkit-backdrop-filter: blur( 3px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  padding: 2rem;
 }
 .box-info{
   width: 60%;
@@ -97,24 +98,20 @@ body{
 }
 
 
-
-
-
-
-
-
-
 .modal-overlay {
-  background: #8f8f8f44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
+  background: rgba(12, 12, 12, 0.445);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
 }
 .modal-content {
   width: 90%;
@@ -122,6 +119,7 @@ body{
   padding: 20px;
   border-radius: 5px;
   background-color: #29203f;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 h1 {
@@ -144,14 +142,22 @@ label {
   margin: 5px 0;
   padding-bottom: 20px;
 }
-
+.input-box h2{
+  font-size: 25px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.input-box h3{
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
 .input-text {
   width: 100%;
   height: 2.375rem;
   padding: 0.375rem 0.75rem;
   margin-top: 0.5rem;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.068);
+  background: rgba(193, 117, 255, 0.400);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: none;
@@ -191,7 +197,7 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.068);
+  background: rgba(193, 117, 255, 0.400);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.048);
@@ -200,45 +206,11 @@ textarea::placeholder {
   cursor: pointer;
   opacity: 1;
   color: #fff;
+  font-weight: bold;
 }
 
 .btn-modal:hover {
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(193, 117, 255, 0.300);
   transition-duration: 0.5s;
+  border-color: rgb(193, 117, 255);
 }
-
-
-
-/* 
-.modal-content {
-  width: 90%;
-  max-width: 500px;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-  border-radius: 5px;
-  color: black;
-}
-.box-modal{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.box-modal textarea{
-  width: 450px;
-  resize: none;
-}
-.box-modal input, textarea{
-  padding: .5rem;
-  border-radius: 5px;
-  border: 2px solid ;
-  margin-top: .5rem;
-}
-.box-modal :nth-child(2){
-  width: 200px;
-}
-.btn-modal {
-  padding: 5px;
-  font-size: large;
-  float: right;
-  cursor: pointer;
-} */

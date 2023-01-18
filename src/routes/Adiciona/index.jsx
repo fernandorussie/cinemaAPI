@@ -4,6 +4,7 @@ import api from '../../service/api';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './adiciona.css';
+import Head from '../../components/Head';
 
 const Adiciona = () => {
   const [nome, setNome] = useState();
@@ -58,6 +59,7 @@ const Adiciona = () => {
 
   return (
     <div className="new-post">
+      <Head title="Cadastrar novo filme"/>
       <form className="form-content" onSubmit={(e) => addItem(e)}>
         {erro && <p className="erro">{erro}</p>}
         <h2>Inserir novo Filme</h2>

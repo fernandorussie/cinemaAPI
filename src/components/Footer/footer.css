@@ -37,6 +37,10 @@ footer ul{
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-image: url('../../assets/github.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
   
   .wrapper .tooltip {
@@ -44,7 +48,7 @@ footer ul{
     top: 0;
     font-size: 14px;
     background: #fff;
-    color: #fff;
+    color: rgb(59, 59, 59);
     padding: 5px 8px;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -78,23 +82,23 @@ footer ul{
   }
   
   .wrapper .facebook:hover,
-  .wrapper .facebook:hover .tooltip,
+  
   .wrapper .facebook:hover .tooltip::before {
-    background: #7525e2;
+    background-image: url('../../assets/logo.png');
     color: #fff;
   }
   
   .wrapper .twitter:hover,
-  .wrapper .twitter:hover .tooltip,
+  
   .wrapper .twitter:hover .tooltip::before {
-    background: #7525e2;
+    background-image: url('../../assets/logo.png');
     color: #fff;
   }
   
   .wrapper .instagram:hover,
-  .wrapper .instagram:hover .tooltip,
+  
   .wrapper .instagram:hover .tooltip::before {
-    background: #7525e2;
+    background-image: url('../../assets/logo.png');
     color: #fff;
   }
   

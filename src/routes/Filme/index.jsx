@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import api from '../../service/api';
 
 import './filme.css';
+import Head from '../../components/Head';
 
 Modal.setAppElement('#root');
 function Filme() {
@@ -57,6 +58,7 @@ function Filme() {
 
   return (
     <div className="container-filme">
+      <Head title={item.nome}/>
       <div className="box-content">
         <div className="box-info">
           <div className="box-title">

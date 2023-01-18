@@ -29,7 +29,7 @@ function Header() {
                         <Link to={'/drama'}>Drama</Link>
                     </li>
                     <li>
-                        <Link to={'/adiciona'}>Adicionar Filme</Link>
+                        <Link className="btn-add" to={'/adiciona'}>Adicionar Filme</Link>
                     </li>
                 </ul>
             </header>

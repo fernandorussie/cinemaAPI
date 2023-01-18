@@ -21,7 +21,7 @@ const Filme = ({id, poster, nome, descricao, genero}) => {
 
   return (
     <div key={id} className='property-card'>
-                <img src={poster} alt="" />
+                <img src={poster} alt={nome} />
                 <div className='property-description'>
                   <h5>{nome}</h5>
                   <div className='description'>{descricao}</div>

@@ -2,7 +2,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     background-color: #17191f;
 }
 header h2 a{
@@ -13,10 +13,16 @@ header ul{
     gap: 1rem;
 }
 
-.new-btn{
+.btn-add{
     font-weight: bold;
+    font-size: 16px;
     border: 1px solid #fff;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
     opacity: 1;
+}
+.btn-add:hover {
+    color: rgb(211, 208, 212);
+    border-color: rgb(193, 117, 255);
 }

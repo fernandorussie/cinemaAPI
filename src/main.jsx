@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 
-import Home from './routes/Home'
+import Home from './routes/Home copy'
 import Terror from './routes/Filmes'
 import Filme from './routes/Filme'
 import Adiciona from './routes/Adiciona'
